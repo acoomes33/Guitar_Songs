@@ -1,1 +1,9 @@
-A user can sign up or log in,
+This app allows a user to create a collection of songs that they
+know how to play on guitar or want to learn.
+
+
+A user can sign up or log in, add or create a song,
+and can edit and delete songs in their collection.
+
+A song can be created and stored under a user id.
+It can also be deleted and edited by their user.
