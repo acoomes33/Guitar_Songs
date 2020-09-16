@@ -10,6 +10,8 @@ class SongsController < ApplicationController
     end 
         
     post "/songs" do
+        song = Song.create(params[:song])
+        redirect "/songs/#{song.id}"
     end 
 
     get "/songs/:id" do
@@ -18,6 +20,7 @@ class SongsController < ApplicationController
     end 
 
     get "/songs/:id/edit" do
+        @song = Song.find_by_id(params[:id])
         erb :"/songs/edit"
     end 
 
@@ -26,7 +29,7 @@ class SongsController < ApplicationController
     end 
 
     delete "/songs/:id" do 
-
+        
     end 
 
 end 
