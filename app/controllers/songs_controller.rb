@@ -25,11 +25,15 @@ class SongsController < ApplicationController
     end 
 
     patch "/songs/:id" do 
-        
+        song = Song.find_by_id(params[:id])
+        song.update(params[:song])
+        redirect "/songs/#{song.id}"
     end 
 
     delete "/songs/:id" do 
-        
+        @song = Song.find_by_id(params[:id])
+        @song.destroy
+        redirect "/songs"
     end 
 
 end 

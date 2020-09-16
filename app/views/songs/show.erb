@@ -1,6 +1,12 @@
+
+<a href=<%="/songs"%>>All Songs</a>
+<a href=<%="/songs/new"%>>New Song</a>
 <h1>Show the Song</h1>
 <h2><%= @song.name %></h2>
 <h3><%= @song.artist %></h3>
 <h4><%= @song.genre %></h4>
-<h4>Edit</h4>
-<h4>Delete</h4>
+<a href=<%="/songs/#{@song.id}/edit"%>><button>Edit</button></a>
+<form method="POST" action="/songs/<%= @song.id %>">
+<input type="hidden" id="hidden" name="_method" value="delete">
+<input type="submit" value="Delete">
+</form>  
