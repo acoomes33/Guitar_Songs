@@ -15,9 +15,14 @@ class UsersController < ApplicationController
     post "/users" do
         if params[:password] == params[:password_confirm]
             params.delete(:password_confirm)
-            user = User.create(params)
-            session[:user_id] = user.id 
-            redirect "/songs"
+            user = User.new(params)
+            if user.save
+                session[:user_id] = user.id 
+                redirect "/songs"
+            else 
+                @errors = user.errors.full_messages
+                erb :"/users/signup"
+            end 
         else
             redirect "/signup"
         end

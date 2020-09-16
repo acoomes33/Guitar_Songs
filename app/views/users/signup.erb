@@ -1,4 +1,12 @@
 <h1>Welcome, please sign up by entering a username and password below</h1>
+<% if @errors %>
+<% @errors.each do |e| %>
+<ul>
+<li><%= e %></li>
+<% end %>
+</ul>
+<% end  %>
+
 <form action="/signup" method="POST">
 <label>Username: </label>
 <input type="text" name="user[username]" id="username" placeholder="username">

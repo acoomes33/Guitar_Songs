@@ -10,13 +10,14 @@ class SongsController < ApplicationController
     end 
         
     post "/songs" do
-        song = Song.create(params[:song])
+        song = current_user.songs.create(params[:song])
+        # song = Song.create(params[:song])
         redirect "/songs/#{song.id}"
     end 
 
     get "/songs/:id" do
         if session[:user_id]
-            @song = Song.find_by_id(params[:id])
+            find_song
             erb :"/songs/show"
         else 
             redirect "/"
@@ -24,24 +25,30 @@ class SongsController < ApplicationController
     end 
 
     get "/songs/:id/edit" do
-        @song = Song.find_by_id(params[:id])
+        find_song
         erb :"/songs/edit"
     end 
 
     patch "/songs/:id" do 
-        song = Song.find_by_id(params[:id])
-        if current_user.id == todo.user_id
-            song.update(params[:song])
-            redirect "/songs/#{song.id}"
+        find_song
+        if current_user.id == @song.user_id
+            @song.update(params[:song])
+            redirect "/songs/#{@song.id}"
         else
             redirect "/"
         end 
     end 
 
     delete "/songs/:id" do 
-        @song = Song.find_by_id(params[:id])
+        find_song
         @song.destroy
         redirect "/songs"
     end 
+
+    private 
+
+        def find_song
+            @song = Song.find_by_id(params[:id])
+        end 
 
 end 
