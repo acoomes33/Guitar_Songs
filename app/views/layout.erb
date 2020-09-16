@@ -16,7 +16,7 @@
   <body>
     <div class="wrapper">
       <nav class="menu">
-        <% if session[:user_id] %>
+        <% if logged_in? %>
           <ul>
           <li><a href="/songs">Your Songs</a></li>
           <li><a href="/songs/new">New Song</a></li>
