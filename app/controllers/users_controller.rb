@@ -4,14 +4,6 @@ class UsersController < ApplicationController
         erb :"/users/signup"
     end
 
-    # post "/signup" do
-    #     if params[:username] == "" || params[:password] == ""
-    #         redirect "/signup"
-    #     else
-    #         @user = User.create(:username => params[:username], :password => params[:password])
-    #     end 
-    # end 
-
     post "/users" do
         if params[:password] == params[:password_confirm]
             params.delete(:password_confirm)

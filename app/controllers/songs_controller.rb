@@ -11,12 +11,11 @@ class SongsController < ApplicationController
         
     post "/songs" do
         song = current_user.songs.create(params[:song])
-        # song = Song.create(params[:song])
         redirect "/songs/#{song.id}"
     end 
 
     get "/songs/:id" do
-        if session[:user_id]
+        if logged_in?
             find_song
             erb :"/songs/show"
         else 
