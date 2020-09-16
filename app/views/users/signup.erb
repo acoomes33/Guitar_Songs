@@ -1,18 +1,21 @@
-<h1>Welcome, please sign up by entering a username and password below</h1>
+<h1>Welcome, Sign up below:</h1>
 <% if @errors %>
 <% @errors.each do |e| %>
 <ul>
-<li><%= e %></li>
+<li><strong><%= e %></strong></li>
 <% end %>
 </ul>
 <% end  %>
-
-<form action="/signup" method="POST">
+<br>
+<form action="/users" method="POST">
 <label>Username: </label>
-<input type="text" name="user[username]" id="username" placeholder="username">
+<input type="text" name="username" id="username" placeholder="username">
 <br>
 <label>Password: </label>
-<input type="password" name="user[password]" id="password" placeholder="password">
+<input type="password" name="password" id="password" placeholder="password">
+<br>
+<label>Password Confirmation: </label>
+<input type="password" name="password_confirm" id="password_confirm" placeholder="password">
 <br>
 <input type="submit" value="Sign Up">
 </form>

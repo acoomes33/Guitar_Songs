@@ -17,12 +17,13 @@
     <div class="wrapper">
       <nav class="menu">
         <% if logged_in? %>
-          <ul>
-          <li><a href="/songs">Your Songs</a></li>
-          <li><a href="/songs/new">New Song</a></li>
           <form action="/logout" method="POST">
             <input type="submit" value="Logout">
           </form>
+          <br>
+          <ul>
+          <li><a href="/songs">Your Songs</a></li>
+          <li><a href="/songs/new">New Song</a></li>
         <% else %>
           <li><a href="/signup">Sign Up</a></li>
           <li><a href="/login">Log In</a></li>

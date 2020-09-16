@@ -1,10 +1,9 @@
-<h1> <%= current_user.username %> Songs:</h1>
+<h1> <%= current_user.username %>'s Songs:</h1>
 
 <ul>
 <% @songs.each do |song| %>
-<a href="/songs/<%=song.id%>"><li><strong><%= song.name %></strong> - <%= song.artist %> - <%= song.genre %></li></a>
+<a href="/songs/<%=song.id%>"><li><strong><%= song.name %></strong> - <%= song.artist %> - <%= song.genre %></li></a><br>
 <% end %>
 </ul>
 
 
-<a href=<%="/songs/new"%>>New Song</a>
