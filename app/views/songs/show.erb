@@ -1,8 +1,14 @@
 
 
-<h2>Song Name: <%= @song.name %></h2>
-<h4>Artist: <%= @song.artist %></h4><br>
-<h4>Genre: <%= @song.genre %></h4><br>
+<h2>Song Title: <%= @song.name %></h2>
+<h4><%= @song.progress ? "Completed!" : "In Progress..." %></h4><br><br>
+<h4>Artist: <%= @song.artist %></h4><br><br>
+<h4>Lyrics: <%= @song.lyrics %></h4><br><br>
+<h4>Genre: <%= @song.genre %></h4><br><br>
+<h4>Mood: <%= @song.mood %></h4><br><br>
+<h4>Vibe: <%= @song.vibe %></h4><br><br>
+<h4>BPM: <%= @song.bpm %></h4><br><br>
+<h4>Instruments: <%= @song.instruments %></h4><br><br>
 <a href=<%="/songs/#{@song.id}/edit"%>><button>Edit</button></a>
 <form method="POST" action="/songs/<%= @song.id %>">
 <input type="hidden" id="hidden" name="_method" value="delete">

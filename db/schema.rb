@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20200917153445) do
     t.text    "lyrics"
     t.string  "mood"
     t.string  "vibe"
+    t.string  "bpm"
     t.boolean "progress",    default: false
     t.text    "instruments"
   end

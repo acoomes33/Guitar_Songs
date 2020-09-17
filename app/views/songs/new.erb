@@ -1,10 +1,25 @@
-<h1>Create a new Song</h1>
+<h1>Create A New Song!</h1>
 <form action="/songs" method="POST">
 <label>Name: </label>
-<input type="text" id="song_name" name="song[name]" placeholder="name">
+<input type="text" id="song_name" name="song[name]" placeholder="name"><br><br>
 <label>Artist: </label>
-<input type="text" id="song_artist" name="song[artist]" placeholder="artist">
+<input type="text" id="song_artist" name="song[artist]" placeholder="artist"><br><br>
+<label>Lyrics: </label>
+<textarea id="song_lyrics" name="song[lyrics]" placeholder="Start writing!"></textarea><br><br>
 <label>Genre: </label>
-<input type="text" id="song_genre" name="song[genre]" placeholder="genre">
+<input type="text" id="song_genre" name="song[genre]" placeholder="genre"><br><br>
+<label>Vibe: </label>
+<input type="text" id="song_vibe" name="song[vibe]" placeholder="vibe"><br><br>
+<label>Mood: </label>
+<input type="text" id="song_mood" name="song[mood]" placeholder="mood"><br><br>
+<label>Bpm: </label>
+<input type="text" id="song_bpm" name="song[bpm]" placeholder="bpm"><br><br>
+<label>Instruments: </label>
+<textarea id="song_instruments" name="song[instruments]" placeholder="instruments"></textarea><br><br>
+<label>Progress: </label><br>
+<input type="radio" id="in_progress" name="song[progress]" value="In Progress..." checked>
+<label for="in_progress">In Progress...</label><br>
+<input type="radio" id="completed" name="song[progress]" value="Completed!">
+<label for="completed">Completed!</label><br><br>
 <input type="submit" value="Create Song">
 </form>
