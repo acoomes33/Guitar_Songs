@@ -19,10 +19,18 @@
 <label>Instruments: </label>
 <textarea id="song_instruments" name="song[instruments]"><%= @song.instruments %></textarea><br><br>
 <label>Progress: </label><br>
-    <input type="radio" id="in_progress" name="song[progress]" value="In Progress..." checked>
+<% if @song.progress == "Completed!" %>
+    <input type="radio" id="in_progress" name="song[progress]" value="In Progress...">
+    <label for="in_progress">In Progress...</label><br>
+    <input type="radio" id="completed" name="song[progress]" value="Completed!" checked>
+    <label for="completed">Completed!</label><br><br>
+    <input type="submit" value="Update Song">
+<% else %>
+    <input type="radio" id="in_progress" name="song[progress]" value="In Progress..."checked>
     <label for="in_progress">In Progress...</label><br>
     <input type="radio" id="completed" name="song[progress]" value="Completed!">
     <label for="completed">Completed!</label><br><br>
     <input type="submit" value="Update Song">
+<% end  %>
 
 </form>
