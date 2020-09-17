@@ -20,7 +20,9 @@ Or install it yourself as:
 
 ## Usage
 
-To start this program, type in bin/run to run the app. It will then ask you to enter in a zipcode, which you will then do. Once it receives the zipcode, it will either show you a list of breweries in the area, or tell you that no breweries were found in that zipcode area. It will then ask you to pick a brewery from the list to learn more information about that specific brewery. You will type in the number that the brewery is listed under in the list. After receiving the input, the app will print more information about that brewery and will give a goodbye message and end the program.
+When visiting the homepage, you will be welcomed to the site and shown a sign up and log in link. A user can either sign up or log in, and once that has been done they will be shown an index page that contains their songs. They can click on a song's list and be brought to a show page where they can see the song's attributes and can edit or delete the song. If they choose to edit, they will be brought to an edit page where they can enter in a new value for any of the form's attributes and submit the changes. If they click the delete button, the song will be deleted from the user's collection. To log out, the user can click the log out button on whatever page they are on.
+
+
 
 ## Development
 
@@ -30,7 +32,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/acoomes33/Brewery_Finder. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/acoomes33/Guitar_Songs/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/acoomes33/Guitar_Songs. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/acoomes33/Guitar_Songs/blob/master/CODE_OF_CONDUCT.md).
 
 
 ## License
