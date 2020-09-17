@@ -7,7 +7,7 @@
 <label>Artist: </label>
 <input type="text" id="song_artist" name="song[artist]" value="<%= @song.artist %>"><br><br>
 <label>Lyrics: </label>
-<textarea id="song_lyrics" name="song[lyrics]" value="<%= @song.lyrics %>"></textarea><br><br>
+<textarea id="song_lyrics" name="song[lyrics]"><%= @song.lyrics %></textarea><br><br>
 <label>Genre: </label>
 <input type="text" id="song_genre" name="song[genre]" value="<%= @song.genre %>"><br><br>
 <label>Vibe: </label>
@@ -17,11 +17,12 @@
 <label>Bpm: </label>
 <input type="text" id="song_bpm" name="song[bpm]" value="<%= @song.bpm %>"><br><br>
 <label>Instruments: </label>
-<textarea id="song_instruments" name="song[instruments]" value="<%= @song.instruments %>"></textarea><br><br>
+<textarea id="song_instruments" name="song[instruments]"><%= @song.instruments %></textarea><br><br>
 <label>Progress: </label><br>
-<input type="radio" id="in_progress" name="song[progress]" value="In Progress..." checked>
-<label for="in_progress">In Progress...</label><br>
-<input type="radio" id="completed" name="song[progress]" value="Completed!">
-<label for="completed">Completed!</label><br><br>
-<input type="submit" value="Update Song">
+    <input type="radio" id="in_progress" name="song[progress]" value="In Progress..." checked>
+    <label for="in_progress">In Progress...</label><br>
+    <input type="radio" id="completed" name="song[progress]" value="Completed!">
+    <label for="completed">Completed!</label><br><br>
+    <input type="submit" value="Update Song">
+
 </form>

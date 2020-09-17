@@ -1,5 +1,5 @@
 class AddingProgressColumnToSongs < ActiveRecord::Migration
   def change
-    add_column :songs, :progress, :boolean, default: false
+    add_column :songs, :progress, :string
   end
 end
