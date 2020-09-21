@@ -4,19 +4,7 @@ This is a website that handles users and songs that they have entered into the s
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'guitar_songs'
-```
-
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install guitar_songs
+Clone this repository, enter bundle install, and run the program using either shotgun or rack 
 
 ## Usage
 
