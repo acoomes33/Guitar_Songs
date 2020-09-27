@@ -16,8 +16,8 @@ class SongsController < ApplicationController
     end 
 
     get "/songs/:id" do
-        if logged_in?
-            find_song
+        find_song
+        if logged_in? && current_user.id == @song.user_id
             erb :"/songs/show"
         else 
             redirect "/"
@@ -26,7 +26,11 @@ class SongsController < ApplicationController
 
     get "/songs/:id/edit" do
         find_song
+        if logged_in? && current_user.id == @song.user_id
         erb :"/songs/edit"
+        else
+            redirect "/"
+        end
     end 
 
     patch "/songs/:id" do 
@@ -41,8 +45,12 @@ class SongsController < ApplicationController
 
     delete "/songs/:id" do 
         find_song
-        @song.destroy
-        redirect "/songs"
+        if logged_in? && current_user.id == @song.user_id
+            @song.destroy
+            redirect "/songs"
+        else
+            redirect "/"
+        end
     end 
 
     private 
